@@ -26,6 +26,7 @@ void merge(int a[], int si, int ei)
             j++;
         }
     }
+
     while (i <= mid)
     {
         out[k] = a[i];
@@ -41,7 +42,7 @@ void merge(int a[], int si, int ei)
     }
 
     int m = 0;
-    for (int i = si; i <= ei; i++)
+    for (int i = 0; i < size; i++)
     {
         a[i] = out[m];
         m++;
@@ -71,6 +72,7 @@ int main()
     int a[1000];
 
     cin >> n >> si >> ei;
+
     for (int i = 0; i < n; i++)
     {
         cin >> a[i];
