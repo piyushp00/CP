@@ -22,4 +22,5 @@ int main()
     cin >> input;
     string output = "";
     printSubSequence(input, output);
+    cout << output.length() << endl;
 }
