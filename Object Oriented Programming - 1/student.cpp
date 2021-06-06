@@ -1,14 +1,18 @@
 class student
 {
 public:
-    int age;
+    int rollNumber;
 
 private:
-    int rollNumber;
+    int age;
 
 public:
     void display()
     {
         cout << age  << " " << rollNumber << endl;
+    }
+
+    int getAge(){
+        return age;
     }
 };

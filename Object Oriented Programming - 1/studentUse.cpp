@@ -10,10 +10,10 @@ int main()
 
     student s3, s4, s5;
 
-    s1.age = 24;
+    //s1.age = 24;
     s1.rollNumber = 101;
 
-    cout << s1.age << endl;
+    cout << "S1 age :" << s1.getAge() << endl;
     cout << s1.rollNumber << endl;
 
 
@@ -24,7 +24,12 @@ int main()
     (*s6).age = 52;
     (*s6).rollNumber = 84;
 
+    
     // Alternate way of assigning value;
     s6->age = 21;
     s6->rollNumber = 18;
+
+    (*s6).display();
+    // alternate
+    s6->display();
 } 
