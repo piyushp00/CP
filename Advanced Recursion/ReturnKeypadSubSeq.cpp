@@ -26,7 +26,7 @@ string getString(int d)
     }
 
     if (d == 6)
-    {23
+    {
         return "mno";
     }
 
