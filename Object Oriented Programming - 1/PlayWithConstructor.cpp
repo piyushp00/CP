@@ -13,5 +13,6 @@ int main(){
 
     s1 = s2; //Copy Assignment operator
 
-    student s5 = s4; //Internally same as "student s5(s4);""
+    // #Note
+    student s5 = s4; //Copy Constructor - Internally same as "student s5(s4);""
 }
