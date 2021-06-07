@@ -1,5 +1,4 @@
-class student
-{
+class student{
 public:
     int rollNumber;
 
@@ -7,18 +6,28 @@ private:
     int age;
 
 public:
-    void display()
-    {
-        cout << age  << " " << rollNumber << endl;
+
+    //Default Constructor
+    student(){
+         cout << "Constructor Called" << endl;
+    }
+
+    void display(){
+        cout << age << " " << rollNumber << endl;
     }
 
     int getAge(){
         return age;
     }
 
-    int setAge(int a) {
+    void setAge(int a, int password){
+        if (password != 123){
+            return;
+        }
+
+        if (a < 0){
+            return;
+        }
         age = a;
-        return age;
-        
     }
 };

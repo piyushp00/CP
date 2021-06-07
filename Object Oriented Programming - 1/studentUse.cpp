@@ -16,7 +16,6 @@ int main()
     cout << "S1 age :" << s1.getAge() << endl;
     cout << "S1 Roll NO :" << s1.rollNumber << endl;
 
-
     s1.display();
     //s2.display();
     //Create objects dynamically
@@ -24,7 +23,6 @@ int main()
     //(*s6).age = 52;
     (*s6).rollNumber = 84;
 
-    
     // Alternate way of assigning value;
     //s6->age = 21;
     s6->rollNumber = 18;
@@ -34,4 +32,4 @@ int main()
     //(*s6).display();
     // alternate
     s6->display();
-} 
+}
