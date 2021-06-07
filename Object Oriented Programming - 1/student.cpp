@@ -14,9 +14,9 @@ public:
         cout << "Destructor Called !" << endl;
     }
     //Default Constructor
-    /* student(){
-         cout << "Constructor Called" << endl;
-    } */
+    student(){
+         cout << "Constructor 1 Called !" << endl;
+    }
 
     //Parametrized Constructor
     /* student(int r)
