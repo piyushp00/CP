@@ -4,10 +4,20 @@ using namespace std;
 
 int main(){
 
-
-    
-    
     student s1(10, 1001);
+    student s2(20, 2001);
+    student *s3 = new student(30, 3001);
+    
+    s2 = s1;
+    *s3 = s1;
+
+    s2 = *s3;
+    //Destructor will be called only twice bcz s3 is created dynamically.
+    
+    delete s3;
+    
+    
+    /* student s1(10, 1001);
     cout << "S1 : ";
     s1.display();
 
@@ -24,8 +34,6 @@ int main(){
     s4.display();
 
     student *s5 = new student(*s3);
-    student *s6 = new student(s1);
-
-
+    student *s6 = new student(s1); */
 
 }

@@ -7,6 +7,12 @@ private:
     int age;
 
 public:
+
+    //Destructor
+    ~student()
+    {
+        cout << "Destructor Called !" << endl;
+    }
     //Default Constructor
     /* student(){
          cout << "Constructor Called" << endl;
@@ -18,7 +24,7 @@ public:
         cout << "Constructor 2 called" << endl;
         rollNumber = r;
     } */
-    
+
     //For having parameter name same as data member name
     student(int rollNumber)
     {
@@ -26,7 +32,6 @@ public:
         //writing this is here is necessary
         this->rollNumber = rollNumber;
     }
-
 
     student(int a, int r)
     {
