@@ -15,4 +15,10 @@ public:
     int getAge(){
         return age;
     }
+
+    int setAge(int a) {
+        age = a;
+        return age;
+        
+    }
 };
