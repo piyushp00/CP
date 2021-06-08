@@ -21,11 +21,15 @@ public:
         strcpy(this->name, name);
     }
 
-    //Copy Constructor
-    Students(Students s){
-        //This is shallow copying we should avoid this.
+    //Copy Constructor(important)
+    Students(Students const &s){
         this->age = s.age;
-        this->name = s.name;
+        //This is shallow copying we should avoid this.
+        //this->name = s.name;  
+
+        //Deep Copy
+        this->name = new char[strlen(s.name) + 1];
+        strcpy(this->name, s.name);
     }
 
     void display()
