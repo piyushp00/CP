@@ -21,6 +21,13 @@ public:
         strcpy(this->name, name);
     }
 
+    //Copy Constructor
+    Students(Students s){
+        //This is shallow copying we should avoid this.
+        this->age = s.age;
+        this->name = s.name;
+    }
+
     void display()
     {
         cout << name << " " << age << endl;
