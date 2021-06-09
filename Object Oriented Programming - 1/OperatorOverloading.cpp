@@ -4,15 +4,32 @@ using namespace std;
 
 int main()
 {
+    int i = 5, j = 3;
+    (i += j) += j;
+    
+    
     fraction f1(10, 2);
     fraction f2(15, 4);
 
-    f1.print();
-    //++f1;
-    //f1.print();
-    fraction f3 = ++f1;
+    //post-increment
+    fraction f3 = f1++;
     f1.print();
     f3.print();
+    
+    //pre increment
+    /* f1.print();
+    fraction f3= ++(++f1);  //if we dont't return by reference final change will only reflect in f3 not in f1
+    f1.print();
+    f3.print();  */
+
+
+    
+    
+    //++f1;
+    //f1.print();
+    /* fraction f3 = ++f1;
+    f1.print();
+    f3.print(); */
 
     /* fraction f3 = f1.add(f2);
 
@@ -35,7 +52,4 @@ int main()
         cout << "Not Equal" << endl;
     } */
 
-    
-
-    
 }

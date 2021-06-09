@@ -126,10 +126,22 @@ public:
 //above is not correct because ++i is returning the current object
 
     //to rcv value in a fraction,
-     fraction operator++(){
+     fraction& operator++(){
         numerator = numerator + denominator;
         simpify();
 
         return *this;
     }
-};
+
+    // Post Increment Operator;
+     fraction operator++(int){
+        fraction fNew(numerator, denominator);
+        numerator = numerator + denominator;
+        simpify();
+        fNew.simpify();
+        return fNew;
+    }
+
+    // += operator 
+ 
+}; 
