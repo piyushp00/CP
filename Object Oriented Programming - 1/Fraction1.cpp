@@ -117,8 +117,19 @@ public:
     }
 
     // Pre-increment operator
-    void operator++(){
+    
+    /* void operator++(){
         numerator = numerator + denominator;
         simpify();
+
+    } */
+//above is not correct because ++i is returning the current object
+
+    //to rcv value in a fraction,
+     fraction operator++(){
+        numerator = numerator + denominator;
+        simpify();
+
+        return *this;
     }
 };

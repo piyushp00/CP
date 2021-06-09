@@ -8,8 +8,11 @@ int main()
     fraction f2(15, 4);
 
     f1.print();
-    ++f1;
+    //++f1;
+    //f1.print();
+    fraction f3 = ++f1;
     f1.print();
+    f3.print();
 
     /* fraction f3 = f1.add(f2);
 
