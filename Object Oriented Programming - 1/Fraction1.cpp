@@ -23,7 +23,7 @@ public:
     int getDenominator() const
     {
         return denominator;
-    } 
+    }
 
     void setNumerator(int n)
     {
@@ -55,7 +55,7 @@ public:
         this->denominator = this->denominator / gcd;
     }
 
-    void add(fraction f2)
+    fraction add(fraction const &f2)
     {
 
         int lcm = this->denominator * f2.denominator; //writing this here is optional bcz there is no arguments which have data member name.
@@ -63,11 +63,34 @@ public:
         int y = lcm / f2.denominator;
 
         int num = (x * numerator) + (y * f2.numerator);
-        numerator = num;
-        denominator = lcm;
+        //numerator = num;
+        //denominator = lcm;
+
+        //for adding value in third fraction
+        fraction fNew(num, lcm);
 
         //we need to simplify the denominator also
-        simpify();
+        fNew.simpify();
+        return fNew;
+    }
+
+    fraction operator+(fraction const &f2) const
+    {
+
+        int lcm = this->denominator * f2.denominator; //writing this here is optional bcz there is no arguments which have data member name.
+        int x = lcm / denominator;
+        int y = lcm / f2.denominator;
+
+        int num = (x * numerator) + (y * f2.numerator);
+        //numerator = num;
+        //denominator = lcm;
+
+        //for adding value in third fraction
+        fraction fNew(num, lcm);
+
+        //we need to simplify the denominator also
+        fNew.simpify();
+        return fNew;
     }
 
     void multiply(fraction const &f2)
@@ -75,6 +98,27 @@ public:
         numerator = numerator * f2.numerator;
         denominator = denominator * f2.denominator;
 
+        simpify();
+    }
+
+    fraction operator*(fraction const &f2) const
+    {
+        int n = numerator * f2.numerator;
+        int d = denominator * f2.denominator;
+
+        fraction fNew(n, d);
+        fNew.simpify();
+        return fNew;
+    }
+
+    bool operator==(fraction const &f2) const
+    {
+        return (numerator == f2.numerator && denominator == f2.denominator);
+    }
+
+    // Pre-increment operator
+    void operator++(){
+        numerator = numerator + denominator;
         simpify();
     }
 };
