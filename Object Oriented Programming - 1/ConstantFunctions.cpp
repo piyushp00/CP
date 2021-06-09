@@ -8,6 +8,7 @@ int main(){
     f1.print();
     f2.print();
 
-    fraction const f3;
+    const fraction f3;
     cout << f3.getNumerator() << " " << f3.getDenominator() << endl;
+
 }

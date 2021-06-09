@@ -14,6 +14,7 @@ public:
         this->denominator = denominator;
     }
 
+    //since both the fn felow are not changing the properties of the current object, so both of them can be marked constant fn.
     int getNumerator() const
     {
         return numerator;
@@ -34,7 +35,7 @@ public:
         denominator = d;
     }
 
-    void print()
+    void print() const
     {
         cout << this->numerator << "/" << denominator << endl; //writing this here is optional bcz there is no arguments which have data member name.
     }
