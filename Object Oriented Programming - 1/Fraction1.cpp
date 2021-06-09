@@ -117,16 +117,17 @@ public:
     }
 
     // Pre-increment operator
-    
+
     /* void operator++(){
         numerator = numerator + denominator;
         simpify();
 
     } */
-//above is not correct because ++i is returning the current object
+    //above is not correct because ++i is returning the current object
 
     //to rcv value in a fraction,
-     fraction& operator++(){
+    fraction &operator++()
+    {
         numerator = numerator + denominator;
         simpify();
 
@@ -134,7 +135,8 @@ public:
     }
 
     // Post Increment Operator;
-     fraction operator++(int){
+    fraction operator++(int)
+    {
         fraction fNew(numerator, denominator);
         numerator = numerator + denominator;
         simpify();
@@ -142,6 +144,20 @@ public:
         return fNew;
     }
 
-    // += operator 
- 
-}; 
+    // += operator
+    void operator+=(fraction const &f2)
+    {
+        int lcm = denominator * f2.denominator; //writing this here is optional bcz there is no arguments which have data member name.
+        int x = lcm / denominator;
+        int y = lcm / f2.denominator;
+
+        int num = (x * numerator) + (y * f2.numerator);
+
+        numerator = num;
+        denominator = lcm;
+        fraction fNew(num, lcm);
+
+        fNew.simpify();
+        return fNew;
+    }
+};

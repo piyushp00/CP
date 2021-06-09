@@ -6,6 +6,7 @@ int main()
 {
     int i = 5, j = 3;
     (i += j) += j;
+    cout<< i << " " << j << endl;
     
     
     fraction f1(10, 2);
