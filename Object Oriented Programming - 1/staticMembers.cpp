@@ -16,5 +16,5 @@ int main()
 
     //cout << Student ::totalStudents << endl; //will give rror bcz total studentsis now a private property.
 
-    cout << Student :: getTotalStudents << endl;
+    cout << Student :: getTotalStudents() << endl;
 }

@@ -19,7 +19,7 @@ class Student{
 
     static int getTotalStudents(){  //now this fn belong to a class
         return totalStudents;
-    }
+    } 
 }; 
 
 int Student :: totalStudents = 0; // initialize static data members
