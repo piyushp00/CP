@@ -145,7 +145,7 @@ public:
     }
 
     // += operator
-    void operator+=(fraction const &f2)
+    fraction &operator+=(fraction const &f2)
     {
         int lcm = denominator * f2.denominator; //writing this here is optional bcz there is no arguments which have data member name.
         int x = lcm / denominator;
@@ -155,9 +155,9 @@ public:
 
         numerator = num;
         denominator = lcm;
-        fraction fNew(num, lcm);
+        
 
-        fNew.simpify();
-        return fNew;
+        simpify();
+        return *this;
     }
 };

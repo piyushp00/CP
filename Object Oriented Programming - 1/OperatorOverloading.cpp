@@ -9,13 +9,19 @@ int main()
     cout<< i << " " << j << endl;
     
     
-    fraction f1(10, 2);
-    fraction f2(15, 4);
+    fraction f1(10, 3);
+    fraction f2(5, 2);
+
+    (f1 += f2) += f2;
+    f1.print();
+    f2.print();
+   // (f1 += f2) += f2; //this will give error if return type is void.
+    
 
     //post-increment
-    fraction f3 = f1++;
+    /* fraction f3 = f1++;
     f1.print();
-    f3.print();
+    f3.print(); */
     
     //pre increment
     /* f1.print();
