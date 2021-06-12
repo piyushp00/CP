@@ -2,15 +2,46 @@
 using namespace std;
 #include "Node.cpp"
 
-int main(){
 
-   //Staticlly
-   Node n1(1);
-   // Storing the address of 1st node or head
-   Node *head = &n1; //Its not a new node..Its just a poiinter variable.
-   Node n2(2);
+void print(Node *head){
+    //We should not travel on head bcz we can loose its address. we should use a temp pointer
 
-   n1.next = &n2;
+    while(head != NULL){
+        cout << head->data << " "; 
+        head = head->next;
+    }
+    cout << endl;
+}    
+
+int main()
+{
+
+    //Staticlly LinkedList Creation
+    Node n1(1);
+    // Storing the address of 1st node or head
+    Node *head = &n1; //Its not a new node..Its just a pointer variable.
+    Node n2(2);
+    Node n3(3);
+    Node n4(4);
+    Node n5(5);
+
+    //Connecting Nodes
+    n1.next = &n2;
+    n2.next = &n3;
+    n3.next = &n4;
+    n4.next = &n5;
+    
+    print(head);
+
+    /* n1.next = &n2;
    cout << n1.data << " " << n2.data << endl;
    cout << head << endl;
+   cout << head->data << endl; //cout << (*head).data << endl;
+
+   //Dynamically LinkedList Creation
+   Node *n3 = new Node(10);
+   Node *head = n3;
+
+   Node *n4 = new Node(20);
+   n3->next = n4;  */
 }
