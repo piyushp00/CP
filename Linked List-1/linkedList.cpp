@@ -5,13 +5,13 @@ using namespace std;
 
 void print(Node *head){
     //We should not travel on head bcz we can loose its address. we should use a temp pointer
-   //Node *temp = head;
-    while(head != NULL){
-        cout << head->data << " "; 
-        head = head->next;
+   Node *temp = head;
+    while(temp != NULL){
+        cout << temp->data << " "; 
+        temp = temp->next;
     }
     cout << endl;
-
+    temp = head; //again save the address in temp
     /*
     temp = head;
     while(temp != NULL){
@@ -39,7 +39,7 @@ int main()
     n4.next = &n5;
     
     print(head);
-    print(head);
+    //print(head);
     /* n1.next = &n2;
    cout << n1.data << " " << n2.data << endl;
    cout << head << endl;
