@@ -27,5 +27,5 @@ int main(){
     n4->next = n5;
 
     print(head);
-    print(head);
+    //print(head);
 }
