@@ -4,10 +4,9 @@ using namespace std;
 
 class Polynomial
 {
-    public:
+public:
     int *degCoeff;
     int capacity;
-
 
     //default constructor
     Polynomial()
