@@ -2,8 +2,28 @@
 using namespace std;
 #include "Node.cpp"
 
-//Teke Input
-Node* takeInput(){
+//Better way to take Input(Complexity -  O(n))
+Node *takeInputBetter(){
+    int data;
+    cin >> data;
+    Node *head = NULL;
+    Node *tail = NULL;
+    while(data != -1){
+        Node *newNode = new Node(data);
+        if(head == NULL && tail == NULL){
+            head = newNode;
+            tail = newNode;
+        } else {
+            tail->next = newNode;
+            tail = tail->next; //or // tail = newNode;
+        }
+        cin >> data;
+    }
+    return head;
+}
+
+//Teke Input (Complexity - n^2(not good))
+Node* takeInput1(){
     int data;
     cin >> data;
     Node *head = NULL; //means linked list is empty
@@ -24,6 +44,7 @@ Node* takeInput(){
     return head;
 }
 
+
 //Print Function
 void print(Node *head){
     Node *temp = head;
@@ -36,6 +57,7 @@ void print(Node *head){
 }
 
 int main(){
-    Node *head = takeInput();
+    //Node *head = takeInput1();
+    Node *head = takeInputBetter();
     print(head);
 }
