@@ -2,45 +2,59 @@
 using namespace std;
 #include "Node.cpp"
 
-//Insert Node at ith positon
-Node *insertNode(Node *head, int i, int data){
-    Node *newNode = new Node(data);
-    int count = 0;
-    Node *temp = head;
+// Delete Node
 
-    if(i == 0){
-        newNode->next = head;
-        head = newNode;
+Node *deleteNode(Node *head, int i)
+{
+    if (head == NULL)
+    {
         return head;
     }
 
-    while(temp != NULL && count < i-1){
+    if (i == 0)
+    {
+        head = head->next;
+        return head;
+    }
+
+    Node *temp = head;
+    int count = 0;
+    while (temp != NULL && count < i - 1)
+    {
         temp = temp->next;
         count++;
     }
-    
-    if(temp != NULL){
-    newNode->next = temp->next; //newNode->next = a;
-    temp->next = newNode;
+
+    if (temp == NULL || temp->next == NULL)
+    {
+        return head;
+    }
+
+    temp->next = temp->next->next;
     //or
     /* Node *a = temp->next;
-    temp->next = newNode;
-    newNode->next = a; */
-    }
-    return head;   
+    temp->next = a->next;
+    delete a; */
+
+    return head;
 }
 
-Node *takeInput(){
+Node *takeInput()
+{
     int data;
     cin >> data;
     Node *head = NULL;
     Node *tail = NULL;
-    while(data != -1){
+    while (data != -1)
+    {
         Node *newNode = new Node(data);
-        if(head == NULL && tail == NULL){
+        if (head == NULL && tail == NULL)
+        {
             head = newNode;
             tail = newNode;
-        } else {
+        }
+        else
+        {
             tail->next = newNode;
             tail = tail->next; //or // tail = newNode;
         }
@@ -49,9 +63,11 @@ Node *takeInput(){
     return head;
 }
 
-void print(Node *head){
+void print(Node *head)
+{
     Node *temp = head;
-    while(temp !=NULL){
+    while (temp != NULL)
+    {
         cout << temp->data << " ";
         temp = temp->next;
     }
@@ -59,13 +75,13 @@ void print(Node *head){
     temp = head;
 }
 
-int main(){
-    
+int main()
+{
+
     Node *head = takeInput();
     print(head);
-    int i, data;
-    cin >> i >> data;
-    head = insertNode(head, i, data);
+    int i;
+    cin >> i;
+    head = deleteNode(head, i);
     print(head);
 }
-
