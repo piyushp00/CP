@@ -13,7 +13,7 @@ int length(Node *head)
     {
         return 0;
     }
-    
+
     return 1 + length(head->next);
 }
 
