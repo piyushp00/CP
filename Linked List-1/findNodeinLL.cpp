@@ -6,21 +6,21 @@ of an integer data denoted by 'N' (if it exists). Return -1 otherwise. */
 using namespace std;
 #include "Node.cpp"
 
+
 int findNode(Node *head, int num){
     Node *temp = head;
     int count = 0;
-    int index = 0;
     while(temp != NULL){
         if(temp->data == num){
-            index = count;
-            return index;
+            return count;
         } 
         temp = temp->next;
         count++;
     
     }
     return -1;
-}  
+}   
+ 
 
 Node *takeInput(){
     int data;
