@@ -7,7 +7,7 @@ using namespace std;
 Node *insertNode(Node *head, int i, int data){
 
     //Base case
-    if(head == NULL){
+    if(head == NULL || head->next == NULL){
         return head;
     }
 

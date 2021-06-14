@@ -69,6 +69,6 @@ int main(){
     print(head);
     int n;
     cin >> n;
-    head = appendLastN(head, n);
+    head = appendLastNToFirst(head, n);
     print(head);
 }
