@@ -25,12 +25,3 @@ Node *removeDuplicates(Node *head){
     }
 }
 
-int main(){
-    
-    Node *head = takeInput();
-    print(head);
-    int n;
-    cin >> n;
-    head = appendLastNToFirst(head, n);
-    print(head);
-}
