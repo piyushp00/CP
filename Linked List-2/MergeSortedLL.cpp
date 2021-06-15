@@ -7,7 +7,31 @@ is also sorted(in ascending order) and return the new head to the list. */
 using namespace std;
 #include "Node.cpp"
 
+//Recursive Approach
+Node* mergeTwoSortedLinkedLists(Node *head1, Node *head2) {
+   if(head1==NULL) {
+     return head2;
+   }
+
+    if(head2==NULL) {
+     return head1;
+    }
+
+    Node *h1=head1;
+    Node *h2=head2;
+
+    if(h1->data <= h2->data) {
+        h1->next = mergeTwoSortedLinkedLists(h1->next, h2);
+        return h1;
+    }
+    else {
+        h2->next = mergeTwoSortedLinkedLists(h1, h2->next);
+        return h2;  
+    }
+}
+
 //Iterative Approach
+
 Node *mergeTwoSortedLinkedLists(Node *head1, Node *head2){
     if(head1 == NULL){
         return head2; 
