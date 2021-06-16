@@ -13,32 +13,14 @@ Node *midPoint(Node *head)
         return head;
     }
 
-    Node *temp = head;
-    int count = 0;
-    while (temp != NULL)
-    {
-        temp = temp->next;
-        count++;
-    }
-
     Node *slow = head;
     Node *fast = head->next;
-    if (count % 2 != 0)
+    while (fast != NULL && fast->next != NULL)
     {
-        while (fast != NULL)
-        {
-            slow = slow->next;
-            fast = fast->next->next;
-        }
+        slow = slow->next;
+        fast = fast->next->next;
     }
-    else
-    {
-        while (fast->next != NULL)
-        {
-            slow = slow->next;
-            fast = fast->next->next;
-        }
-    }
+
     return slow;
 }
 
