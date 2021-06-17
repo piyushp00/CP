@@ -102,10 +102,6 @@ int main()
 
     Node *head = takeInput();
     print(head);
-    Node *mid = midPoint(head);
-    if (mid != NULL)
-    {
-        cout << mid->data;
-    }
-    cout << endl;
+    
+    cout << isPalindrome(head) << endl;
 }
