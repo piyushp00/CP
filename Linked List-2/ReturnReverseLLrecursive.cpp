@@ -13,6 +13,25 @@ public:
     Node *tail;
 };
 
+
+//Simplest Approch - Complexity(O(n))
+Node *reverseLLrecursive_3(Node *head)
+{
+    if (head == NULL || head->next == NULL)
+    {
+        return head;
+    }
+
+    Node *smallAns = reverseLLrecursive_3(head->next);
+   //head->next->next = head;
+   //or
+    Node *tail = head->next;
+    tail->next = head;
+    head->next = NULL;
+
+    return smallAns;
+}
+
 //Double Node Approach (O(n))
 Pair reverseLLrecursive_2(Node *head){
     if (head == NULL || head->next == NULL)
