@@ -16,7 +16,7 @@ Node *reverseLL(Node *head){
     return smallAns;
 }
 
-//Time Complexity - O(n) Space Complexity- O(1)
+//Time Complexity - O(n) Space Complexity- O(1) 
 bool isPalindrome(Node *head){
     
     if(head == NULL || head->next == NULL){
