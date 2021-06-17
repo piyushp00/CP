@@ -13,6 +13,7 @@ public:
     Node *tail;
 };
 
+//Double Node Approach (O(n))
 Pair reverseLLrecursive_2(Node *head){
     if (head == NULL || head->next == NULL)
     {
@@ -35,6 +36,8 @@ Node *reverseLLrecursiveBetter(Node *head){
     return reverseLLrecursive_2(head).head;
 }
 
+
+//Complexity(O(n^2))
 Node *reverseLLrecursive(Node *head)
 {
     if (head == NULL || head->next == NULL)
