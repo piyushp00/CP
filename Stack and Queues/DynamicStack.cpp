@@ -3,17 +3,17 @@
 #include <climits>
 using namespace std;
 
-class StackUsingArray{
+class DynamicStack{
 private:
     int *data;
     int nextIndex;
     int capacity;  
 public:
-    //Constructor (static creation)
-    StackUsingArray(int totalSize){
-        data = new int[totalSize];
+    //Dynamic Array Constructor
+    DynamicStack(){
+        data = new int[4];
         nextIndex = 0;
-        capacity = totalSize;
+        capacity = 4;
     }
 
     //Return no of elements present in stack
@@ -35,8 +35,13 @@ public:
     //Insert Element
     void push(int element){
         if(nextIndex == capacity){
-            cout << "Stack is Full" << endl;
-            return;
+            int *newData = new int[2 * capacity];
+            for(int i = 0; i < capacity; i++){
+                newData[i] = data[i];
+            }
+            capacity = capacity * 2;
+            delete[] data;
+            data = newData;
         }
         data[nextIndex] = element;
         nextIndex++;

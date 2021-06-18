@@ -5,12 +5,24 @@
 using namespace std;
 
 int main(){
-    int n, ch, val;
-    cout << "Enter Size: ";
-    cin >> n;
-    cout << endl;
-    StackUsingArray s(n);
-    cout<<"1) Push in stack"<<endl;
+    
+    StackUsingArray s(4);
+    s.push(10);
+    s.push(20);
+    s.push(30);
+    s.push(40);
+    s.push(50);
+
+    cout << s.top() << endl;
+
+    cout << s.pop() << endl;
+    cout << s.pop() << endl;
+    cout << s.pop() << endl;
+
+    cout << s.size() << endl;
+
+    cout << s.isEmpty() << endl;
+    /* cout<<"1) Push in stack"<<endl;
     cout<<"2) Pop from stack"<<endl;
     cout<<"3) Display stack"<<endl;
     cout<<"4) Top Stack"<<endl;
@@ -59,21 +71,7 @@ int main(){
                 cout<<"Invalid Choice"<<endl;
             }
         }
-    }   while(ch != 7);
-    /* s.push(10);
-    s.push(20);
-    s.push(30);
-    s.push(40);
-    s.push(50);
-
-    cout << s.top() << endl;
-
-    cout << s.pop() << endl;
-    cout << s.pop() << endl;
-    cout << s.pop() << endl;
-
-    cout << s.size() << endl;
-
-    cout << s.isEmpty() << endl; */
+    }   while(ch != 7); */
+     
 
 }
