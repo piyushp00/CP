@@ -38,11 +38,12 @@ Node *skipMdeleteN(Node *head, int m, int n){
 
         while(currNode != NULL && skip < n){
             Node *newNode = currNode;
-            delete currNode;
+            //delete currNode;
             currNode = newNode->next;
             skip++;
         }
     }
+    
     if(temp != NULL){
         temp->next = NULL;
     }
