@@ -38,6 +38,7 @@ Node *evenAfterOdd(Node *head){
         }
         temp = temp->next;
     }
+    
     if(oddHead == NULL){
         evenTail->next = NULL;
         return evenHead;
