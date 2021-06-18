@@ -60,4 +60,15 @@ public:
         }
         return data[nextIndex-1];
     }
+
+    void display() {
+        if(nextIndex >= 0) {
+            cout<<"Stack elements are:";
+            for(int i = nextIndex; i >= 0; i--)
+            cout << data[i] << " ";
+            cout << endl;
+        } else {
+        cout << "Stack is empty";
+        }
+    }
 };
