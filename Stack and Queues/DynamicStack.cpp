@@ -3,15 +3,17 @@
 #include <climits>
 using namespace std;
 
+template <typename T>
+
 class DynamicStack{
 private:
-    int *data;
+    T *data;
     int nextIndex;
     int capacity;  
 public:
     //Dynamic Array Constructor
     DynamicStack(){
-        data = new int[4];
+        data = new T[4];
         nextIndex = 0;
         capacity = 4;
     }
@@ -33,9 +35,9 @@ public:
     }
 
     //Insert Element
-    void push(int element){
+    void push(T element){
         if(nextIndex == capacity){
-            int *newData = new int[2 * capacity];
+            T *newData = new T[2 * capacity];
             for(int i = 0; i < capacity; i++){
                 newData[i] = data[i];
             }
@@ -48,20 +50,20 @@ public:
     }
 
     //Delete Element
-    int pop(){
+    T pop(){
         if(isEmpty()){
             cout << "Stack is Empty" << endl;
-            return INT_MIN;
+            return 0;
         }
         nextIndex--;
         return data[nextIndex];
     }
 
     //To find top
-    int top(){
+    T top(){
         if(isEmpty()){
             cout << "Stack is Empty" << endl;
-            return INT_MIN;
+            return 0;
         }
         return data[nextIndex-1];
     }

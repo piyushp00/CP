@@ -4,8 +4,8 @@
 #include "DynamicStack.cpp"
 using namespace std;
 
-int main(){
-    DynamicStack s;
+int main() {
+    DynamicStack<int> s;
     s.push(10);
     s.push(20);
     s.push(30);
