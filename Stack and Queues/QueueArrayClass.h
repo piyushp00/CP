@@ -40,4 +40,25 @@ public:
         }
         size++;
     }
+
+    //Front function
+    T front(){
+        if(isEmpty()){
+            cout << "Queue Empty!" << endl;
+            return 0;
+        }
+        return data[firstIndex];
+    }
+
+    //Delete Element
+    T deQueue(){
+        if(isEmpty()){
+            cout << "Queue Empty!" << endl;
+            return 0;
+        }
+        T ans = data[firstIndex];
+        firstIndex = (firstIndex + 1) % capacity;
+        size--;
+        return ans;
+    }
 };
