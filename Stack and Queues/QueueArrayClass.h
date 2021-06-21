@@ -1,6 +1,9 @@
-template<typename T> 
+#include <iostream>
+using namespace std;
 
-class Queue{
+template <typename T> 
+
+class mQueue{
     T *data;
     int nextIndex;
     int firstIndex;
@@ -9,7 +12,7 @@ class Queue{
 
 public:
     //Constructor
-    Queue(int s){
+    mQueue(int s){
         data = new T[s];
         nextIndex = 0;
         firstIndex = -1;
@@ -27,13 +30,13 @@ public:
         return size == 0;
     }
 
-    //Insert Element
+    //Insert Element(static -> fixed size)
     void enQueue(T element){
         if(size == capacity){
             cout << "Queue Full!" << endl;
             return; 
         }
-        data[nextIndex] == element;
+        data[nextIndex] = element;
         nextIndex = (nextIndex + 1) % capacity;
         if(firstIndex == -1){
             firstIndex = 0;
@@ -59,6 +62,10 @@ public:
         T ans = data[firstIndex];
         firstIndex = (firstIndex + 1) % capacity;
         size--;
+        if(size == 0){
+            firstIndex = -1;
+            nextIndex = 0;
+        }
         return ans;
     }
 };
