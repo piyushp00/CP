@@ -30,12 +30,26 @@ public:
         return size == 0;
     }
 
-    //Insert Element(static -> fixed size)
+    //Insert Element(Dyanmic- no fixed size array)
     void enQueue(T element){
         if(size == capacity){
-            cout << "Queue Full!" << endl;
-            return; 
+            T *newData = new T[2 * capacity];
+            int j = 0;
+            for(int i = firstIndex; i < capacity; i++){
+                newData[j] = data[i];
+                j++;
+            }
+            for(int i = 0; i < firstIndex; i++){
+                newData[j] = data[i];
+                j++;
+            }
+            delete[] data;
+            data = newData;
+            firstIndex = 0;
+            nextIndex = capacity;
+            capacity *=2;
         }
+        
         data[nextIndex] = element;
         nextIndex = (nextIndex + 1) % capacity;
         if(firstIndex == -1){

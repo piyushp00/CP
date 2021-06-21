@@ -1,9 +1,10 @@
 #include <iostream>
-#include "QueueArrayClass.h"
+//#include "QueueArrayClass.h"
+#include "DynamicQueue.h"
 using namespace std;
 
 int main(){
-    mQueue<int> q(5);
+    Queue<int> q(5);
 
     q.enQueue(10);
     q.enQueue(20);
