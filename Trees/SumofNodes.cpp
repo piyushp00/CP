@@ -3,22 +3,28 @@
 #include <queue>
 using namespace std;
 
-//Count Nodes
-int numNodes(TreeNode<int>* root){
-    //Base Case
-    int ans = 1;
-    for(int i = 0; i < root->children.size(); i++){
-        ans += numNodes(root->children[i]);
-    }
-    return ans;
-}
-
+//sum of nodes
 int nodeSum(TreeNode<int>* root){
     int ans = root->data;
     for(int i = 0; i < root->children.size(); i++){
         ans += nodeSum(root->children[i]);
     }
     return ans;
+}
+
+TreeNode<int>* maxDataNode(TreeNode<int>* root){
+    if(root == NULL){
+        return NULL;
+    }
+
+    TreeNode<int>* max = root;
+    for(int i = 0; i < root->children.size(); i++){
+        TreeNode<int>* locMax = maxDataNode(root->children[i]);
+        if(max->data < locMax->data){
+            max = locMax;
+        }
+    }
+    return max;
 }
 
 //Take Input LevelWise
