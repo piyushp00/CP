@@ -46,7 +46,7 @@ int main() {
     root->children.push_back(node1);
     root->children.push_back(node2); */
 
-    TreeNode<int>* root = takeInputLevelWise() ;
+    TreeNode<int>* root = printTree() ;
     printTree(root);
     //TODO delete
 }
