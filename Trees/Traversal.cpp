@@ -47,6 +47,18 @@ void preOrder(TreeNode<int>* root){
     }
 }
 
+//Post-Order Traversal
+void postOrder(TreeNode<int>* root){
+    if(root == NULL){
+        return;
+    }
+
+    for(int i = 0; i < root->children.size(); i++){
+        postOrder(root->children[i]);
+    }
+    cout << root->data << " ";
+}
+
 //Print Level Wise
 void printLevelWise(TreeNode<int>* root){
     if(root == NULL){
@@ -79,4 +91,6 @@ int main() {
     //TODO delete
 
     preOrder(root);
+    cout << endl;
+    postOrder(root);
 }
