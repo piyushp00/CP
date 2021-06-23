@@ -12,6 +12,7 @@ TreeNode<int>* maxDataNode(TreeNode<int>* root){
     TreeNode<int>* max = root;
     for(int i = 0; i < root->children.size(); i++){
         TreeNode<int>* locMax = maxDataNode(root->children[i]);
+        
         if(max->data < locMax->data){
             max = locMax;
         }
