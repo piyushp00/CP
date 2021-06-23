@@ -24,8 +24,6 @@ int numLeafNodes(TreeNode<int> * root){
     return num;
 }
 
-
-
 //Take Input LevelWise
 TreeNode<int>* takeInputLevelWise() {
     int rootData;
@@ -80,6 +78,7 @@ void printLevelWise(TreeNode<int>* root){
     }
 }
 
+// 1 3 2 3 4 2 5 6 2 7 8 0 0 0 0 1 9 0
 int main() {
     TreeNode<int>* root = takeInputLevelWise() ;
     printLevelWise(root);
