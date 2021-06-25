@@ -9,20 +9,6 @@ of the node and data of its immediate child nodes has to be taken.
 #include "TreeNodeClass.h"
 using namespace std;
 
-//Greater than x
-int greaterThanX(TreeNode<int>* root, int x){
-    
-    int count = 0;
-    if(root->data > x){
-        count++;
-    }
-
-    for(int  i = 0; i < root->children.size(); i++){
-        count  = count + greaterThanX(root->children[i], x);
-    }
-    return count;
-}
-
 //Node with Maximum Child Sum
 TreeNode<int>* getNodeMaxChild(TreeNode<int>* root){
 
