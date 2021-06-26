@@ -17,5 +17,6 @@ public:
         for(int  i = 0; i < children.size(); i++){
             delete children[i];
         }
+        cout << "TREE DELETED ";
     }
 };

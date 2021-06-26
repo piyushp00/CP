@@ -100,7 +100,6 @@ int main() {
     printLevelWise(root);
     //TODO delete
     
-
 TreeNode<int>* ans =  getNodeMaxChild(root);
 cout << ans->data << endl;
 }
