@@ -10,7 +10,7 @@ public:
     BinaryTreeNode(T data) {
         this->data = data;
         left = NULL;
-        right = NULL:
+        right = NULL;
     }
 
     //Destructor
