@@ -31,8 +31,8 @@ TreeNode<int>* takeInputLevelWise() {
             front->children.push_back(child);
             pendingNodes.push(child);
         }
+        return root;
     }
-    return root;
 }
 
 //Pre-Order Travesal
