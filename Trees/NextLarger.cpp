@@ -30,7 +30,7 @@ TreeNode<int>* getNextLargerElement(TreeNode<int>* root, int n){
         if(ans == NULL){
         ans = temp;
     	}
-        
+
         if(temp->data < ans->data){
             ans = temp;
         }
@@ -95,11 +95,10 @@ void printLevelWise(TreeNode<int>* root){
 // 1 3 2 3 4 2 5 6 2 7 8 0 0 0 0 1 9 0
 int main() {
     TreeNode<int>* root = takeInputLevelWise();
-    printLevelWise(root);
+    //printLevelWise(root);
     int n;
     cin >> n;
-    TreeNode<int>* ans = NULL;
-    ans = getNextLargerElement(root, n);
+    TreeNode<int>* ans = getNextLargerElement(root, n);
     if(ans != NULL){
     cout << ans->data << endl;
     }
