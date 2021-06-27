@@ -3,6 +3,28 @@
 using namespace std;
 #include <queue>
 
+//PreOrder Traversal
+void preOrder(BinaryTreeNode<int>* root){
+    if(root == NULL){
+        return;
+    }
+    
+    cout << root->data << " ";
+    preOrder(root->left);
+    preOrder(root->right);
+}
+
+//PostOrder Traversal
+void postOrder(BinaryTreeNode<int>* root){
+    if(root == NULL){
+        return;
+    }
+
+    preOrder(root->left);
+    preOrder(root->right);
+    cout << root->data << " ";
+}
+
 //InOrder Traversal
 void inOrder(BinaryTreeNode<int>* root){
     if(root == NULL){
@@ -88,6 +110,13 @@ BinaryTreeNode<int>* takeInputLevelWise(){
 int main(){
     BinaryTreeNode<int> *root = takeInputLevelWise();
     printTreeLevelWise(root);
+    cout << "preOrder: ";
+    preOrder(root);
+    cout << endl;
+    cout << "postOrder: ";
+    postOrder(root);
+    cout << endl;
+    cout << "inOrder: ";
     inOrder(root);
     delete root;
 }
