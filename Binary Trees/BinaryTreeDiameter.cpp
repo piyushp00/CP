@@ -5,10 +5,7 @@ Find the diameter of binary tree.
 #include <iostream>
 #include "BinaryTreeNode.h"
 #include <queue>
-#include <cmath>
-
 using namespace std;
-
 
 int heightOfTree(BinaryTreeNode<int> *root){
     if(root == NULL){
