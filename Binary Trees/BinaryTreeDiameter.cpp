@@ -18,7 +18,7 @@ int heightOfTree(BinaryTreeNode<int> *root){
     return 1 + max(heightOfTree(root->left), heightOfTree(root->right));
 }
 
-//Binary Tree Diameter  (O(n*h) - two times height is getting called)
+//Binary Tree Diameter (O(n*h) - two times height is getting called)
 //Not efficient solution
 int diameterOfTree(BinaryTreeNode<int>* root){
     if(root == NULL){
@@ -32,8 +32,7 @@ int diameterOfTree(BinaryTreeNode<int>* root){
     return max(option1, max(option2, option3));
 }
 
-//Efficient Solutions
-
+//Efficient Solutions (O(n))
 pair<int, int> heightDiameter(BinaryTreeNode<int>* root){
     if(root == NULL){
         pair<int, int> p;
