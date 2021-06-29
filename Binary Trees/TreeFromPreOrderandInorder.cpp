@@ -46,7 +46,7 @@ BinaryTreeNode<int>* buildTree(int *preOrder, int preLength, int *inOrder, int i
     int inEnd = inLength - 1;
 
     return buildTreeHelper(preOrder, preStart, preEnd, inOrder, inStart, inEnd);
-}
+} 
 
 //Print Level Wise
 void printTreeLevelWise(BinaryTreeNode<int> *root) {
