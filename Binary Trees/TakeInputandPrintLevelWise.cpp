@@ -35,7 +35,7 @@ void printTreeLevelWise(BinaryTreeNode<int> *root) {
 }
 
 //Take Input Level wise
-BinaryTreeNode<int>* takeInputLevelWise(){
+BinaryTreeNode<int>* takeInputLevelWise() {
     int rootData;
     cout << "Enter Root Data" << endl;
     cin >> rootData;
@@ -71,10 +71,9 @@ BinaryTreeNode<int>* takeInputLevelWise(){
     return root;
 }
 
-
 // 1 2 3 4 5 -1 -1 -1 -1 -1 -1
 // 1 2 3 4 5 6 7 -1 -1 -1 -1 8 9 -1 -1 -1 -1 -1 -1
-int main(){
+int main() {
     BinaryTreeNode<int> *root = takeInputLevelWise();
     printTreeLevelWise(root);
     delete root;
