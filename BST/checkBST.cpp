@@ -10,9 +10,9 @@ Note: Duplicate elements should be kept in the right subtree. */
 #include <climits>
 using namespace std;
 #include <queue>
-/*
+
 //Alternalte Solutions
-bool isBST(BinaryTreeNode<int> *root,int min=INT_MIN,int max=INT_MAX){
+bool isBST2(BinaryTreeNode<int> *root,int min=INT_MIN,int max=INT_MAX){
 
     //Base Case   
     if(root == NULL) {
@@ -25,13 +25,13 @@ bool isBST(BinaryTreeNode<int> *root,int min=INT_MIN,int max=INT_MAX){
     }
 
     //Recursion Call
-    bool leftAns = isBST(root->left, min, root->data);
-    bool rightAns = isBST(root->right, root->data, max);
+    bool leftAns = isBST2(root->left, min, root->data);
+    bool rightAns = isBST2(root->right, root->data, max);
 
     return leftAns && rightAns;
 }
-*/
-//Check BST Helper
+
+//Check BST Helper (not efficient- O(n*h))
 bool isBSTHelper(BinaryTreeNode<int>* root, int min, int max){
     
     //Base Case
