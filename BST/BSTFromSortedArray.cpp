@@ -43,27 +43,6 @@ BinaryTreeNode<int>* constructBST(int *arr, int size){
     return constructBSTHelper(arr, si, ei);
 }
 
-//Alternalte Solutions (O(n)) - (very short and efficient)
-bool isBST2(BinaryTreeNode<int> *root, int min = INT_MIN, int max = INT_MAX){
-
-    //Base Case   
-    if(root == NULL) {
-        return true;
-    }
-
-    //Small Calculation
-    if(root->data < min || root->data > max) {
-        return false;
-    }
-
-    //Recursion Call
-    bool leftAns = isBST2(root->left, min, root->data - 1);
-    bool rightAns = isBST2(root->right, root->data, max);
-
-    return leftAns && rightAns;
-}
-
-
 //Print Level at New Line
 void printLevelWise(BinaryTreeNode<int>* root) {
     if(root == NULL) {
