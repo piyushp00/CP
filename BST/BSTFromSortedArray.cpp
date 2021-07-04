@@ -16,7 +16,7 @@ Note: Duplicate elements should be kept in the right subtree. */
 #include <queue>
 using namespace std;
 
-//COnstruct BST from Array
+//Construct BST from Array Helper
 BinaryTreeNode<int>* constructBSTHelper(int *arr, int si, int ei){
     
     if(si > ei){
