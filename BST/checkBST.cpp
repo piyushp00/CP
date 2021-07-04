@@ -11,8 +11,40 @@ Note: Duplicate elements should be kept in the right subtree. */
 using namespace std;
 #include <queue>
 
-//Alternalte Solutions
-bool isBST2(BinaryTreeNode<int> *root,int min=INT_MIN,int max=INT_MAX){
+//Efficient Solution (O(n)) (efficient with triplet class)
+class checkBST {
+public:
+    bool isBST;
+    int minimum;
+    int maximum;
+};
+
+checkBST isBST3(BinaryTreeNode<int>* root){
+    if(root == NULL){
+        checkBST output;
+        output.isBST = true;
+        output.minimum = INT_MAX;
+        output.maximum = INT_MIN;
+        return output;
+    }
+
+    checkBST leftOutput = isBST3(root->left);
+    checkBST rightOutput = isBST3(root->right);
+
+    int minimum = min(root->data, min(leftOutput.minimum, rightOutput.minimum));
+    int maximum = max(root->data, max(leftOutput.maximum, rightOutput.maximum));
+
+    bool isBSTFinal = (root->data > leftOutput.maximum) && (root->data <= rightOutput.minimum) && leftOutput.isBST && rightOutput.isBST;
+
+    checkBST output;
+    output.minimum = minimum;
+    output.maximum = maximum;
+    output.isBST = isBSTFinal;
+    return output;
+}
+
+//Alternalte Solutions (O(n)) - (very short and efficient)
+bool isBST2(BinaryTreeNode<int> *root, int min = INT_MIN, int max = INT_MAX){
 
     //Base Case   
     if(root == NULL) {
@@ -25,13 +57,13 @@ bool isBST2(BinaryTreeNode<int> *root,int min=INT_MIN,int max=INT_MAX){
     }
 
     //Recursion Call
-    bool leftAns = isBST2(root->left, min, root->data);
+    bool leftAns = isBST2(root->left, min, root->data - 1);
     bool rightAns = isBST2(root->right, root->data, max);
 
     return leftAns && rightAns;
 }
 
-//Check BST Helper (not efficient- O(n*h))
+//Check BST Helper  (O(n))
 bool isBSTHelper(BinaryTreeNode<int>* root, int min, int max){
     
     //Base Case
@@ -45,13 +77,13 @@ bool isBSTHelper(BinaryTreeNode<int>* root, int min, int max){
     }
 
     //Recursion Call
-    bool leftAns = isBSTHelper(root->left, min, root->data);
+    bool leftAns = isBSTHelper(root->left, min, root->data - 1);
     bool rightAns = isBSTHelper(root->right, root->data, max);
     
     return leftAns & rightAns;
 }
 
-//Check BST
+//Check BST(with helper functions) (short and efficient)
 bool isBST(BinaryTreeNode<int>* root){
     return isBSTHelper(root, INT_MIN, INT_MAX);
 }
@@ -162,6 +194,6 @@ BinaryTreeNode<int>* takeInputLevelWise(){
 int main(){
     BinaryTreeNode<int> *root = takeInputLevelWise();
     
-    cout << ((isBST(root)) ? "true" : "false");
+    cout << ((isBST2(root)) ? "true" : "false");
     delete root;
 }
