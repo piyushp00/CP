@@ -1,5 +1,5 @@
-#include "BinaryTreeNode.h"
 #include <iostream>
+#include "BinaryTreeNode.h"
 using namespace std;
 
 
@@ -26,8 +26,10 @@ private:
 
         if(node->data < data){
             node->right = deleteData(data, node->right);
+            return node;
         } else if(node->data > data) {
             node->left = deleteData(data, node->left);
+            return node;
         } else {
             if(node->left == NULL && node->right == NULL){
                 delete node;
@@ -59,7 +61,7 @@ private:
     //Print Recursively Helper
     void printTree(BinaryTreeNode<int> *root){
         if(root == NULL){
-        return;
+            return;
         }
     
         cout << root->data <<  ":";
@@ -78,7 +80,7 @@ private:
 public:
     //Delete
     void deleteData(int data){
-        this->root = deleteData(data, this->root);
+        root = deleteData(data, root);
     }
 
     
@@ -109,7 +111,7 @@ private:
 public:
     //Insert Data
     void insert(int data){
-       this->root = insert(data, this->root);
+       root = insert(data, root);
     }
 
 private:
