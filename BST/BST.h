@@ -1,8 +1,9 @@
 #include "BinaryTreeNode.h"
 #include <iostream>
-#include <climits>
+using namespace std;
 
-class BST{
+
+class BST {
     BinaryTreeNode<int>* root;
 
 public:
@@ -16,17 +17,6 @@ public:
     ~BST(){
         delete root;
     }
-
-BinaryTreeNode<int>* minimum(BinaryTreeNode<int>* node){
-    if(node == NULL){
-        return node; 
-    }
-
-    BinaryTreeNode<int>* min = node;
-    if(node->data > INT_MAX){
-    
-    }
-}
 
 private:
     BinaryTreeNode<int>* deleteData(int data, BinaryTreeNode<int>* node){
@@ -65,6 +55,25 @@ private:
             }
         } 
     }
+
+    //Print Recursively Helper
+    void printTree(BinaryTreeNode<int> *root){
+        if(root == NULL){
+        return;
+        }
+    
+        cout << root->data <<  ":";
+        if(root->left != NULL){
+            cout << "L" << root->left->data << " ";
+        }
+
+        if(root->right != NULL){
+            cout << "R" << root->right->data << " ";
+        }
+        cout << endl;
+        printTree(root->left);
+        printTree(root->right);
+    }
     
 public:
     //Delete
@@ -72,7 +81,15 @@ public:
         this->root = deleteData(data, this->root);
     }
 
+    
+    //Print Recursively
+    void printTree(){
+        printTree(root);
+    }
+    
+
 private:
+    //Insert Data Helper
     BinaryTreeNode<int>* insert(int data, BinaryTreeNode<int>* node){
         if(node == NULL){
             BinaryTreeNode<int>* newNode = new BinaryTreeNode<int>(data);
@@ -90,12 +107,13 @@ private:
     }
 
 public:
-    //Insert
+    //Insert Data
     void insert(int data){
        this->root = insert(data, this->root);
     }
 
 private:
+    //Has Data Helper
     bool hasData(int data, BinaryTreeNode<int>* node){
         
         if(node == NULL){
