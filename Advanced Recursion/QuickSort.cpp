@@ -115,8 +115,13 @@ int main()
 {
     int n, si, ei;
     int a[1000];
-
-    cin >> n >> si >> ei;
+    cout << "Enter Size" << endl; 
+    cin >> n;
+    cout << "Enter Start Index" << endl;
+    cin >> si; 
+    cout << "Enter End Index" << endl;
+    cin >> ei;
+    cout << "Enter " << n << " elements" << endl;
     for (int i = 0; i < n; i++)
     {
         cin >> a[i];
@@ -124,6 +129,8 @@ int main()
 
     quickSort(a, si, ei);
 
+
+    cout << "Sorted array is : ";
     for (int i = 0; i < n; i++)
     {
         cout << a[i] << " ";
