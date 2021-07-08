@@ -16,9 +16,11 @@ The root will remain the same. So you just need to insert nodes in the given Bin
 #include "Node.h"
 #include <vector>
 #include <algorithm>
-using namespace std;
 #include <queue>
+using namespace std;
 
+
+//Convert Binary Tree to Array
 void convertToArray(BinaryTreeNode<int> *root, vector<int> &output){
     if (root == NULL){
         return;
