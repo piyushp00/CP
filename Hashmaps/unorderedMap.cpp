@@ -21,7 +21,7 @@ int main(){
     //cout << ourMap.at("ghi") << endl; //it will give error
     cout << "Size: " << ourMap.size() << endl;
     cout << ourMap["ghi"] << endl; //it will not give error but,if it dont exist ,it will insert default value of zero
-     cout << "Size: " << ourMap.size() << endl;
+    cout << "Size: " << ourMap.size() << endl;
 
     //To check if key is present or not we will use count fn, it will return 0 or 1 ncz one key exist only once
 
