@@ -5,7 +5,7 @@ using namespace std;
 Node* takeInput(){
     int data;
     cin >> data;
-    Node *head = NULL:
+    Node *head = NULL;
     while(data != -1){
         Node *newNode = new Node(data);
         if(head == NULL){
