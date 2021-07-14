@@ -13,7 +13,7 @@ using namespace std;
 int highestFrequency(int *arr, int n){	 
 	unordered_map<int,int> freq;
     int maxCount = -1;
-    for(int i = 0;i < n;i++){
+    for(int i = 0; i < n; i++){
         freq[arr[i]]++;
         maxCount = max(maxCount, freq[arr[i]]);
     }
