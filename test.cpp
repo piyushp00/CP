@@ -2,31 +2,14 @@
 using namespace std;
 #include "Node.cpp"
 
-Node* takeInput(){
-    int data;
-    cin >> data;
-    Node *head = NULL;
-    while(data != -1){
-        Node *newNode = new Node(data);
-        if(head == NULL){
-            head = newNode;
-        } else {
-            Node *temp = head;
-            while(temp->next != NULL){
-                temp = temp->next;
-            }
-            temp->next = newNode;
-        }
-        cin >> data;
-    }
-    return head;
-}
+int main(){
+    float num1 = 1.1;
+    double num2 = 1.1;
 
-void print(Node *head){
-    Node *temp = head;
-    while(temp != NULL){
-        cout << temp->data << " ";
-        temp = temp->next;
+    if(num1 == num2){
+        cout << "stanford";
+    } else {
+        cout << "harvard";
     }
-    cout << endl;
+    return 0;
 }
