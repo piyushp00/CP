@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-
+/*
 int partition(int a[], int si, int ei)
 {
     int size = ei - si + 1;
@@ -45,12 +45,12 @@ int partition(int a[], int si, int ei)
     }
     return m;
 }
-
+*/
 //Alternate partition function(minor changes)
-/*
+
 int partition(int a[], int si, int ei)
 {
-    int pivot = a[si]
+    int pivot = a[si];
     int smallerCount = 0;
     for (int i = si+1; i <= ei; i++)
     {
@@ -93,7 +93,7 @@ int partition(int a[], int si, int ei)
     return pivotIndex;
     
 }
-*/
+
 
 
 void quickSort(int a[], int si, int ei)

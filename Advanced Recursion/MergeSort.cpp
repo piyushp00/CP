@@ -12,7 +12,7 @@ void merge(int a[], int si, int ei)
     int k = 0;
 
     while (i <= mid && j <= ei)
-    {
+    { 
         if (a[i] < a[j])
         {
             out[k] = a[i];
